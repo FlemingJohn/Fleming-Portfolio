@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-12 shadow-2xl overflow-hidden relative"
+        className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-8 shadow-2xl overflow-hidden relative"
       >
         <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_white]" />
         <span className="text-[13px] font-medium text-white/80 tracking-wide relative z-10">
@@ -18,15 +18,47 @@ const Hero: React.FC = () => {
         </span>
       </motion.div>
 
+      {/* Profile Image Section */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mb-10 group"
+      >
+        {/* Outer Glow Ring */}
+        <div className="absolute inset-0 bg-white/10 blur-2xl rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        
+        {/* Animated Inner Ring */}
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-[-8px] rounded-full border border-dashed border-white/10 opacity-50"
+        />
+
+        {/* Profile Image Container */}
+        <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-b from-white/20 to-transparent backdrop-blur-xl shadow-2xl">
+          <div className="w-full h-full rounded-full overflow-hidden border border-white/10 relative z-10">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" 
+              alt="Developer Profile" 
+              className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
+            />
+          </div>
+          
+          {/* Status Indicator */}
+          <div className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-emerald-500 border-2 border-black z-20 shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+        </div>
+      </motion.div>
+
       {/* Main Heading */}
       <motion.h1
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         className="text-6xl md:text-[105px] font-semibold tracking-tight mb-10 leading-[0.95] text-white"
       >
         Engineering products <br />
-        <span className="text-white">with precision</span>
+        <span className="text-white/40 group-hover:text-white transition-colors duration-700">with precision</span>
       </motion.h1>
 
       {/* Subtext */}
@@ -48,16 +80,16 @@ const Hero: React.FC = () => {
         className="flex flex-row items-center justify-center gap-5 mb-32"
       >
         <motion.button 
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.08)" }}
           whileTap={{ scale: 0.98 }}
-          className="px-10 py-4 rounded-xl bg-white/5 backdrop-blur-2xl border border-white/20 text-white font-medium hover:bg-white/10 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+          className="px-10 py-4 rounded-xl bg-white/5 backdrop-blur-2xl border border-white/20 text-white font-medium transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
         >
           View GitHub
         </motion.button>
         <motion.button 
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.08)" }}
           whileTap={{ scale: 0.98 }}
-          className="px-10 py-4 rounded-xl bg-white/5 backdrop-blur-2xl border border-white/20 text-white font-medium hover:bg-white/10 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+          className="px-10 py-4 rounded-xl bg-white/5 backdrop-blur-2xl border border-white/20 text-white font-medium transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
         >
           Let's Chat
         </motion.button>
