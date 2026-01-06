@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Experience from './components/Experience';
 import Education from './components/Education';
+import Achievements from './components/Achievements';
 
 const App: React.FC = () => {
   return (
@@ -34,11 +35,14 @@ const App: React.FC = () => {
           <BrandLogos />
         </section>
 
-        {/* New Projects Section */}
+        {/* Projects Section */}
         <Projects />
 
         {/* Education Section */}
         <Education />
+
+        {/* Achievements Section */}
+        <Achievements />
 
         <footer className="w-full py-16 mt-20 text-center border-t border-white/[0.03] relative">
           <p className="text-white/20 text-[11px] uppercase tracking-[0.5em] font-medium">
