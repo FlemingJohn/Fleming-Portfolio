@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
     }
   };
 
-  const navItems = ['About', 'Experience', 'Projects', 'Education', 'Achievements'];
+  const navItems = ['About', 'Skills', 'Experience', 'Projects', 'Hackathons', 'Education', 'Achievements'];
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[60] px-4 py-4 md:px-8 md:py-6 pointer-events-none">

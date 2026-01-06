@@ -6,9 +6,11 @@ import FluidBackground from './components/FluidBackground';
 import BrandLogos from './components/BrandLogos';
 import Projects from './components/Projects';
 import About from './components/About';
+import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Achievements from './components/Achievements';
+import Hackathons from './components/Hackathons';
 
 const App: React.FC = () => {
   return (
@@ -26,6 +28,9 @@ const App: React.FC = () => {
 
         {/* About Section */}
         <About />
+
+        {/* Detailed Skills Section */}
+        <Skills />
         
         {/* Experience Timeline */}
         <Experience />
@@ -37,6 +42,9 @@ const App: React.FC = () => {
 
         {/* Projects Section */}
         <Projects />
+
+        {/* Hackathons Section */}
+        <Hackathons />
 
         {/* Education Section */}
         <Education />
