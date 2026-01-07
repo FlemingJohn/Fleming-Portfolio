@@ -161,11 +161,6 @@ const AchievementCard: React.FC<{ item: typeof achievements[0], index: number }>
 const Achievements: React.FC = () => {
   return (
     <section id="achievements" className="w-full max-w-7xl mx-auto px-6 py-48 relative">
-      {/* Decorative Label */}
-      <div className="absolute -top-10 left-10 pointer-events-none opacity-[0.02] select-none hidden lg:block">
-        <span className="text-[220px] font-black leading-none uppercase tracking-tighter">PRESTIGE</span>
-      </div>
-
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-32 relative z-10">
         <div className="max-w-2xl">
           <motion.div
@@ -184,7 +179,7 @@ const Achievements: React.FC = () => {
             viewport={{ once: true }}
             className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-8"
           >
-            Honors & <span className="text-white/20 italic">Milestones</span>
+            Honors & <span className="text-white/20">Milestones</span>
           </motion.h2>
           
           <motion.p 

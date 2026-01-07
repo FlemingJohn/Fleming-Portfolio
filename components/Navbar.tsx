@@ -24,7 +24,8 @@ const Navbar: React.FC = () => {
       transition: {
         duration: 0.5,
         delay: i * 0.05,
-        ease: [0.22, 1, 0.36, 1],
+        // Added 'as any' to fix TypeScript compatibility issues with custom cubic-bezier arrays in Variants
+        ease: [0.22, 1, 0.36, 1] as any,
       },
     }),
     hover: {

@@ -62,11 +62,6 @@ const Hackathons: React.FC = () => {
 
   return (
     <section id="hackathons" className="w-full py-32 relative overflow-hidden">
-      {/* Decorative Background Labels */}
-      <div className="absolute top-10 left-10 pointer-events-none opacity-[0.03] select-none">
-        <span className="text-[200px] font-black leading-none uppercase tracking-tighter">REEL_01</span>
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 mb-16 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
@@ -86,7 +81,7 @@ const Hackathons: React.FC = () => {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4"
             >
-              The <span className="text-white/30 italic">Build Reel</span>
+              The <span className="text-white/30">Build Reel</span>
             </motion.h2>
           </div>
           
@@ -153,7 +148,7 @@ const Hackathons: React.FC = () => {
                   </div>
 
                   <div>
-                    <p className="text-white/30 text-sm md:text-base leading-relaxed max-w-md font-light mb-8 group-hover:text-white/60 transition-colors">
+                    <p className="text-white/30 text-sm md:text-base leading-relaxed font-light mb-8 group-hover:text-white/60 transition-colors">
                       {hack.description}
                     </p>
 

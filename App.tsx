@@ -37,7 +37,7 @@ const App: React.FC = () => {
       <div className="relative z-10 flex flex-col w-full">
         <Navbar />
         
-        <main className="min-h-screen flex flex-col justify-center items-center px-6 pt-32">
+        <main className="w-full">
           <Hero />
         </main>
 
