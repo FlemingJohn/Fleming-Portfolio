@@ -8,7 +8,6 @@ import {
 import HeroVisual from './HeroVisual';
 import HeroHUD from './HeroHUD';
 import MagneticButton from './MagneticButton';
-import Circuitry from './Circuitry';
 
 const ScrambleText: React.FC<{ text: string }> = ({ text }) => {
   const [displayText, setDisplayText] = useState(text);
@@ -51,9 +50,6 @@ const Hero: React.FC = () => {
 
   return (
     <div className="relative w-full min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
-      {/* Dynamic Circuitry Background */}
-      <Circuitry />
-      
       {/* Technical HUD Overlay */}
       <HeroHUD />
 
