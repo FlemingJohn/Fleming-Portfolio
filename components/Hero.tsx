@@ -1,8 +1,20 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { 
+  Linkedin, Youtube, Twitter, 
+  Monitor, Trophy, ExternalLink 
+} from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const socials = [
+    { name: 'LinkedIn', icon: Linkedin, href: '#' },
+    { name: 'X', icon: Twitter, href: '#' },
+    { name: 'YouTube', icon: Youtube, href: '#' },
+    { name: 'Devpost', icon: Monitor, href: '#' },
+    { name: 'Hack2Skill', icon: Trophy, href: '#' },
+  ];
+
   return (
     <div className="text-center w-full max-w-6xl mx-auto flex flex-col items-center">
       {/* Badge */}
@@ -58,7 +70,7 @@ const Hero: React.FC = () => {
         className="text-6xl md:text-[105px] font-semibold tracking-tight mb-10 leading-[0.95] text-white"
       >
         Engineering products <br />
-        <span className="text-white/40 group-hover:text-white transition-colors duration-700">with precision</span>
+        <span className="text-white/40">with precision</span>
       </motion.h1>
 
       {/* Subtext */}
@@ -77,7 +89,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
-        className="flex flex-row items-center justify-center gap-5 mb-32"
+        className="flex flex-row flex-wrap items-center justify-center gap-5 mb-12"
       >
         <motion.button 
           whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.08)" }}
@@ -89,10 +101,31 @@ const Hero: React.FC = () => {
         <motion.button 
           whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.08)" }}
           whileTap={{ scale: 0.98 }}
-          className="px-10 py-4 rounded-xl bg-white/5 backdrop-blur-2xl border border-white/20 text-white font-medium transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+          className="px-10 py-4 rounded-xl bg-white text-black font-bold transition-all shadow-[0_20px_50px_rgba(255,255,255,0.05)]"
         >
           Let's Chat
         </motion.button>
+      </motion.div>
+
+      {/* Social Dock */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="flex items-center gap-4 p-2 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm mb-32"
+      >
+        {socials.map((social, i) => (
+          <motion.a
+            key={social.name}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -4, backgroundColor: 'rgba(255,255,255,0.05)' }}
+            className="w-12 h-12 flex items-center justify-center rounded-xl transition-all text-white/30 hover:text-white"
+          >
+            <social.icon className="w-5 h-5" />
+          </motion.a>
+        ))}
       </motion.div>
 
       {/* Scroll Section */}

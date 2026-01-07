@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Terminal, Menu, X } from 'lucide-react';
+import { Sparkles, Terminal, Menu, X, Linkedin, Youtube, Twitter } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,6 +35,12 @@ const Navbar: React.FC = () => {
 
   const navItems = ['About', 'Skills', 'Experience', 'Projects', 'Hackathons', 'Education', 'Achievements'];
 
+  const socialLinks = [
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Twitter, href: "#", label: "X" },
+    { icon: Youtube, href: "#", label: "YouTube" }
+  ];
+
   return (
     <div className="fixed top-0 left-0 right-0 z-[60] px-4 py-4 md:px-8 md:py-6 pointer-events-none">
       <motion.nav
@@ -42,7 +48,7 @@ const Navbar: React.FC = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={`
-          max-w-6xl mx-auto w-full pointer-events-auto
+          max-w-7xl mx-auto w-full pointer-events-auto
           flex justify-between items-center px-6 py-3 md:px-8 md:py-4
           rounded-full transition-all duration-500 border
           ${isScrolled 
@@ -96,7 +102,7 @@ const Navbar: React.FC = () => {
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="px-5 py-2 text-[13px] font-medium text-white/50 hover:text-white transition-all duration-300 relative group rounded-full"
+              className="px-4 py-2 text-[12px] font-medium text-white/50 hover:text-white transition-all duration-300 relative group rounded-full"
               whileHover={{ y: -1 }}
             >
               <span className="relative z-10">{item}</span>
@@ -108,15 +114,31 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Action Button & Mobile Toggle */}
-        <div className="flex items-center gap-4">
+        {/* Socials & Action Button */}
+        <div className="flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-4 pr-6 border-r border-white/10">
+            {socialLinks.map((social, i) => (
+              <motion.a
+                key={i}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -2, color: '#fff' }}
+                className="text-white/30 transition-colors"
+                aria-label={social.label}
+              >
+                <social.icon className="w-4 h-4" />
+              </motion.a>
+            ))}
+          </div>
+
           <motion.button
             whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}
             className="hidden sm:flex glass-card px-6 py-2.5 rounded-full items-center gap-2 text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-all border border-white/10 group overflow-hidden"
           >
             <Sparkles className="w-4 h-4 text-white/70 group-hover:text-white transition-colors animate-pulse" />
-            <span>Contact</span>
+            <span>Connect</span>
           </motion.button>
 
           <button 
@@ -152,12 +174,17 @@ const Navbar: React.FC = () => {
                 </motion.a>
               ))}
               <hr className="border-white/5" />
+              <div className="flex gap-6 py-4">
+                {socialLinks.map((social, i) => (
+                  <a key={i} href={social.href} className="text-white/40 hover:text-white transition-colors">
+                    <social.icon className="w-6 h-6" />
+                  </a>
+                ))}
+              </div>
               <button className="w-full py-4 rounded-2xl bg-white text-black font-bold uppercase tracking-widest text-xs">
-                Resume
+                Get In Touch
               </button>
             </div>
-            {/* Background flourish for mobile menu */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl rounded-full" />
           </motion.div>
         )}
       </AnimatePresence>
