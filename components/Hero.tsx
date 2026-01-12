@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Linkedin, Youtube, Twitter, 
-  Monitor, Trophy, ExternalLink, Sparkles 
+  Monitor, Trophy, ExternalLink, Download 
 } from 'lucide-react';
 import HeroVisual from './HeroVisual';
 import HeroHUD from './HeroHUD';
@@ -118,8 +118,8 @@ const Hero: React.FC = () => {
             View GitHub
           </MagneticButton>
           <MagneticButton variant="primary">
-            <span>Let's Chat</span>
-            <Sparkles className="w-4 h-4" />
+            <span>Download my Resume</span>
+            <Download className="w-4 h-4" />
           </MagneticButton>
         </motion.div>
 

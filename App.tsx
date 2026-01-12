@@ -67,12 +67,12 @@ const App: React.FC = () => {
                 I'm always open to discussing new projects, creative ideas or architectural opportunities.
               </p>
               <motion.a 
-                href="mailto:hello@devflow.eng"
+                href="mailto:hello@flemingjohn.eng"
                 whileHover={{ scale: 1.02 }}
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-black font-bold uppercase tracking-widest text-sm hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)] transition-all"
               >
                 <Mail className="w-5 h-5" />
-                hello@devflow.eng
+                hello@flemingjohn.eng
               </motion.a>
             </div>
 
@@ -99,7 +99,7 @@ const App: React.FC = () => {
 
           <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
             <p className="text-white/20 text-[11px] uppercase tracking-[0.5em] font-medium text-center md:text-left">
-              &copy; {new Date().getFullYear()} DevFlow Engineering &bull; Systems Architect
+              &copy; {new Date().getFullYear()} Fleming John Engineering &bull; Systems Architect
             </p>
             <div className="flex gap-8">
               <a href="#" className="text-[11px] uppercase tracking-widest text-white/20 hover:text-white transition-colors">Privacy</a>

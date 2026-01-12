@@ -6,7 +6,7 @@ import { Sparkles, Terminal, Menu, X, Linkedin, Youtube, Twitter } from 'lucide-
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const brandName = "DevFlow";
+  const brandName = "Fleming John";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +24,6 @@ const Navbar: React.FC = () => {
       transition: {
         duration: 0.5,
         delay: i * 0.05,
-        // Added 'as any' to fix TypeScript compatibility issues with custom cubic-bezier arrays in Variants
         ease: [0.22, 1, 0.36, 1] as any,
       },
     }),
@@ -87,8 +86,8 @@ const Navbar: React.FC = () => {
                 key={i}
                 custom={i}
                 variants={charVariants}
-                className={`text-xl font-bold tracking-tighter ${
-                  i < 3 ? 'text-white' : 'text-white/40'
+                className={`text-xl font-bold tracking-tighter whitespace-pre ${
+                  i < 7 ? 'text-white' : 'text-white/40'
                 }`}
               >
                 {char}
